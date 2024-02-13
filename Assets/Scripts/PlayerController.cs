@@ -66,11 +66,13 @@ public class PlayerController : MonoBehaviour
             winloseText.text = "Game Over!";
             winloseText.color = Color.white; 
            
-           score = 0;
-           health = 5;
-           Invoke("Restart", 2f);
-           Restart();
+           StartCoroutine(LoadScene(3f));
         }
+    }
+        private IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Restart()
@@ -87,4 +89,5 @@ public class PlayerController : MonoBehaviour
     {
         healthText.text = ("Health: " + health);
     }
+    
 }
