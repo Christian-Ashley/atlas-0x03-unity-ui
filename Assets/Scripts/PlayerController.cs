@@ -51,10 +51,7 @@ public class PlayerController : MonoBehaviour
             winloseText.color = Color.black;
 
             winLoseBG.color = Color.green;
-            score = 0;
-           health = 5;
-           Invoke("Restart", 2f);
-           Restart();
+            StartCoroutine(LoadScene(3f));
         }
     }
 
