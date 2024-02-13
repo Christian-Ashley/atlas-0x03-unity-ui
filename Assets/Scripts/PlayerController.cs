@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public Image winLoseBG;
+    public Text winloseText;
     public Text healthText;
     public float speed = 5f;
     private int score = 0;
@@ -42,13 +44,27 @@ public class PlayerController : MonoBehaviour
             ///Debug.Log("Health: " + health);
             SetHealthText();
         }
+        if (other.CompareTag("Goal"))
+        {
+            winLoseBG.gameObject.SetActive(true);
+            winloseText.text = "You Win!";
+            winloseText.color = Color.black;
+
+            winLoseBG.color = Color.green;
+            score = 0;
+           health = 5;
+           Invoke("Restart", 2f);
+           Restart();
+        }
     }
 
          void Update()
     {
         if (health == 0)
         {
-            Debug.Log("Game Over!");
+           winLoseBG.gameObject.SetActive(true);
+            winloseText.text = "Game Over!";
+            winloseText.color = Color.white; 
            
            score = 0;
            health = 5;
