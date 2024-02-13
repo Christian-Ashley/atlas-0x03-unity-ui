@@ -5050,7 +5050,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f47969e18e74414784aa8f205e237ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  healthText: {fileID: 1192578028}
+  speed: 10
   health: 5
   scoreText: {fileID: 638595722}
 --- !u!1 &1271644593
