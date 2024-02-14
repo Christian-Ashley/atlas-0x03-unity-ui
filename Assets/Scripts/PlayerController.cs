@@ -64,7 +64,14 @@ public class PlayerController : MonoBehaviour
             winloseText.color = Color.white; 
            
            StartCoroutine(LoadScene(3f));
+
         }
+        
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("menu");
+        }
+        
     }
         private IEnumerator LoadScene(float seconds)
     {
